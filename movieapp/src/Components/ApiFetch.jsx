@@ -46,7 +46,8 @@ function ApiFetch() {
       for changing dom we need to change useEffect dependacy and pass page into
       inside that useEffect as well
 
-      Meaning
+      Meaning of ""putting page into array is"" this when we change page value
+      useEffect call and rendor that value and then Pagination work..
 
   */
 
