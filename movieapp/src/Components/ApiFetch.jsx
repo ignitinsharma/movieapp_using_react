@@ -8,7 +8,7 @@ function ApiFetch() {
 
   function fetchdata(page) {
     fetch(
-      `https://fathomless-everglades-39788.herokuapp.com/api/movies?_limit=4&_page=${page}`
+      `https://fathomless-everglades-39788.herokuapp.com/api/movies?_limit=8&_page=${page}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -31,6 +31,25 @@ function ApiFetch() {
   useEffect(() => {
     fetchdata(page);
   }, [page]);
+
+
+  /* 
+  
+
+  --> How pagination Works in that application
+
+      When we click on that particluar page using Pre and Next button
+      then page state changes so according to that we change into same page
+      in API as well then data start changing into console but not
+      DOM 
+
+      for changing dom we need to change useEffect dependacy and pass page into
+      inside that useEffect as well
+
+      Meaning
+
+  */
+
 
   return (
     <div>
