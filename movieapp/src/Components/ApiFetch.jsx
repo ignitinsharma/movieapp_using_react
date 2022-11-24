@@ -4,11 +4,11 @@ import { useEffect } from "react";
 
 function ApiFetch() {
   const [data, setdata] = useState([]);
-  const [page, setpage] = useState(1)
+  const [page, setpage] = useState(1);
 
   function fetchdata(page) {
     fetch(
-      `https://fathomless-everglades-39788.herokuapp.com/api/movies?_limit=8&_page=${page}`
+      `https://fathomless-everglades-39788.herokuapp.com/api/movies?_limit=9&_page=${page}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -32,7 +32,6 @@ function ApiFetch() {
     fetchdata(page);
   }, [page]);
 
-
   /* 
   
 
@@ -51,17 +50,41 @@ function ApiFetch() {
 
   */
 
-
   return (
-    <div>
-      {data.map((el) => (
-        <div>
-          <button disabled={page==1} onClick={()=>setpage(page-1)}>Pevious</button>
-          <button disabled={page.length>=0}  onClick={()=>setpage(page+1)}>Next</button>
-          <p>{el.title}</p>
-          <img src={el.poster} alt="" />
+    <div className="parent">
+      <div className="maindiv">
+        <h1 className="h1">Movie APP using React with Pagination 😎</h1>
+        <br />
+        <button
+          className="headerbtn"
+          disabled={page == 1}
+          onClick={() => setpage(page - 1)}
+        >
+          Pevious
+        </button>
+        <button
+          className="headerbtn"
+          disabled={page.length >= 0}
+          onClick={() => setpage(page + 1)}
+        >
+          Next
+        </button>
+        <div className="rendordiv">
+          {data.map((el) => (
+            <div key={el.id} className="contentdivv">
+              <img className="mainimage" src={el.poster} alt="" />
+              <br />
+              <br />
+              <h3 className="movietitle">{el.title}</h3>
+              <br />
+              <h4>{el.genres[0]}</h4>
+              <br />
+              <h5>Rating:- {el.rating}</h5>
+              
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }

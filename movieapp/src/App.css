@@ -1,4 +1,82 @@
-*{
+* {
   padding: 0;
   margin: 0;
+
+  
+}
+
+.parent{
+  width: 100%;
+  background-color: rgb(252, 247, 240);
+}
+
+.maindiv{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.rendordiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 1rem;
+  
+}
+
+
+
+.mainimage {
+  height: 25rem;
+  width: 15rem;
+}
+
+.contentdivv {
+  padding: 1.5rem;
+  border-radius: 15px;
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+.headerbtn {
+  background-color: white;
+  color: black;
+  padding: 0.6rem 2rem;
+  border-radius: 10px;
+}
+
+.headerbtn:hover {
+  background-color: black;
+  color: white;
+  padding: 0.6rem 2rem;
+  border-radius: 10px;
+}
+
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+ 
+  .h1{
+    font-size: 18px;
+  }
+
+.rendordiv {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding: 1rem;
+}
+}
+
+@media only screen and (max-width: 720px) and (min-width: 480px) {
+  
+.rendordiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 1rem;
+}
 }
