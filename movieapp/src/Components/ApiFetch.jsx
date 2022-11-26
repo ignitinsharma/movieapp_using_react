@@ -8,7 +8,7 @@ function ApiFetch() {
 
   function fetchdata(page) {
     fetch(
-      `https://fathomless-everglades-39788.herokuapp.com/api/movies?_limit=9&_page=${page}`
+      `https://backend-by-nitin.onrender.com/api/movies?_limit=9&_page=${page}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -80,7 +80,6 @@ function ApiFetch() {
               <h4>{el.genres[0]}</h4>
               <br />
               <h5>Rating:- {el.rating}</h5>
-              
             </div>
           ))}
         </div>
